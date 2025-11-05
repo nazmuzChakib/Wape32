@@ -13,14 +13,14 @@ Obviously cracking is not part of this project, as ESP32 is not sufficient to cr
 - Parsing captured handshakes into **HCCAPX file** ready to be cracked by Hashcat
 - Passive handshake sniffing
 - Easily extensible framework for new attacks implementations
-- Management AP for easy configuration on the go using smartphone for example
+- ESP32_tools for easy configuration on the go using smartphone for example
 - And more...
 
 
 ## Usage
 1. [Build](#Build) and [flash](#Flash) project onto ESP32 (DevKit or module)
 1. Power ESP32
-1. Management AP is started automatically after boot
+1. ESP32_tools is started automatically after boot
 1. Connect to this AP\
 By default: 
 *SSID:* `ESP32_tools` and *password:* `xnBD2k25`
@@ -40,47 +40,12 @@ esptool.py -p /dev/ttyS5 -b 115200 --after hard_reset write_flash --flash_mode d
 
 On Windows you can use official [Flash Download Tool](https://www.espressif.com/en/support/download/other-tools).
 
-## Documentation
-### Wi-Fi attacks
-Attacks implementations in this project are described in [main component README](main/). Theory behind these attacks is located in [doc/ATTACKS_THEORY.md](doc/ATTACKS_THEORY.md)
-### API reference
-This project uses Doxygen notation for documenting components API and implementation. Doxyfile is included so if you want to generate API reference, just run `doxygen` from root directory. It will generate HTML API reference into `doc/api/html`.
-
-### Components
-This project consists of multiple components, that can be reused in other projects. Each component has it's own README with detailed description. Here comes brief description of components:
-
-- [**Main**](main) component is entry point for this project. All neccessary initialisation steps are done here. Management AP is started and the control is handed to webserver.
-- [**Wifi Controller**](components/wifi_controller) component wraps all Wi-Fi related operations. It's used to start AP, connect as STA, scan nearby APs etc. 
-- [**Webserver**](components/webserver) component provides web UI to configure attacks. It expects that AP is started and no additional security features like SSL encryption are enabled.
-- [**Wi-Fi Stack Libraries Bypasser**](components/wsl_bypasser) component bypasses Wi-Fi Stack Libraries restriction to send some types of arbitrary 802.11 frames.
-- [**Frame Analyzer**](components/frame_analyzer) component processes captured frames and provides parsing functionality to other components.
-- [**PCAP Serializer**](components/pcap_serializer) component serializes captured frames into PCAP binary format and provides it to other components (mostly for webserver/UI)
-- [**HCCAPX Serializer**](components/hccapx_serializer) component serializes captured frames into HCCAPX binary format and provides it to other components (mostly for webserver/UI)
-
 ### Further reading
 * [Academic paper about this project (PDF)](https://excel.fit.vutbr.cz/submissions/2021/048/48.pdf)
 
 ## Hardware 
 This project was mostly build and tested on **ESP32-DEVKITC-32E**
 but there should not be any differences for any **ESP32-WROOM-32** modules.
-
-<p align="center">
-    <img src="doc/images/soucastky_8b.png" alt="Hw components" width="400">
-</p>
-
-On the following pictures you can see a battery (Li-Pol accumulator) powered ESP32 DevKitC using following hardware:
-- **ESP32-DEVKITC-32E** (cost 213 CZK/8.2 EUR/9.6 USD)
-- 220mAh Li-Pol 3.7V accumulator (weights ±5g, cost 77 CZK/3 EUR/3.5 USD)
-- MCP1702-3302ET step-down 3.3V voltage regulator (cost 11 CZK/0.42 EUR/0.50 USD)
-- Czech 5-koruna coin for scale (weights 4.8g, diameter 23 mm, cost 0.19 EUR/0.23 USD)
-<p align="center">
-    <img src="doc/images/mini.jpg" alt="Hw components" width="300">
-    <img src="doc/images/mini2.jpg" alt="Hw components" width="300">
-</p>
-
-Altogether (without coin) this setup weights around 17g. This can be further downsized by using smaller Li-Pol accumulator and using ESP32-WROOM-32 modul directly instead of whole dev board.
-
-This setup cost me around 300 CZK (± 11.50 EUR/13.50 USD). Using the modul directly that costs around 80 CZK (± 3 EUR/3.5 USD) we can get to price of 160 CZK (± 6.5 EUR/7.5 USD) which makes this tool really cheap and available to almost everybody.
 
 ### Power consumption
 Based on experimental measurements, ESP32 consumes around 100mA during attack executions. 
