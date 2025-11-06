@@ -1,4 +1,4 @@
-# ESP32 Wi-Fi Penetration Tool
+# WAPE32 Wi-Fi Pentesting tools
 
 This project introduces an universal tool for ESP32 platform for implementing various Wi-Fi attacks. It provides some common functionality that is commonly used in Wi-Fi attacks and makes implementing new attacks a bit simpler. It also includes Wi-Fi attacks itself like capturing PMKIDs from handshakes, or handshakes themselves by different methods like starting rogue duplicated AP or sending deauthentication frames directly, etc...
 
@@ -8,7 +8,7 @@ Obviously cracking is not part of this project, as ESP32 is not sufficient to cr
 - **PMKID capture**
 - **WPA/WPA2 handshake capture** and parsing
 - **Deauthentication attacks** using various methods
-- **Denial of Service attacks**
+- **Denial of Service attacks(DoS)**
 - Formatting captured traffic into **PCAP format**
 - Parsing captured handshakes into **HCCAPX file** ready to be cracked by Hashcat
 - Passive handshake sniffing
@@ -46,9 +46,6 @@ On Windows you can use official [Flash Download Tool](https://www.espressif.com/
 ## Hardware 
 This project was mostly build and tested on **ESP32-DEVKITC-32E**
 but there should not be any differences for any **ESP32-WROOM-32** modules.
-
-### Power consumption
-Based on experimental measurements, ESP32 consumes around 100mA during attack executions. 
 
 ## Similar projects
 * [GANESH-ICMC/esp32-deauther](https://github.com/GANESH-ICMC/esp32-deauther)
