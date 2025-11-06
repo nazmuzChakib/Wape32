@@ -47,9 +47,6 @@ On Windows you can use official [Flash Download Tool](https://www.espressif.com/
 This project was mostly build and tested on **ESP32-DEVKITC-32E**
 but there should not be any differences for any **ESP32-WROOM-32** modules.
 
-### Power consumption
-Based on experimental measurements, ESP32 consumes around 100mA during attack executions. 
-
 ## Similar projects
 * [GANESH-ICMC/esp32-deauther](https://github.com/GANESH-ICMC/esp32-deauther)
 * [SpacehuhnTech/esp8266_deauther](https://github.com/SpacehuhnTech/esp8266_deauther)
