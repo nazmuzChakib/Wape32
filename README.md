@@ -16,6 +16,9 @@ Obviously cracking is not part of this project, as ESP32 is not sufficient to cr
 - ESP32_tools for easy configuration on the go using smartphone for example
 - And more...
 
+<p>
+    <img src="img/project_img.jpg" alt="images" style="width:300px;height:475px;display:block;margin:0 auto;">
+</p>
 
 ## Usage
 1. [Build](#Build) and [flash](#Flash) project onto ESP32 (DevKit or module)
