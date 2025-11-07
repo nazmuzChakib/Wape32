@@ -17,7 +17,7 @@ Obviously cracking is not part of this project, as ESP32 is not sufficient to cr
 - And more...
 
 <p>
-    <img src="doc/img/project_img.jpg" alt="images" style="width:300px;height:475px;display:block;margin:0 auto;">
+    <img src="doc/img/project_img.jpg" alt="images" style="width:300px;height:475px;display:block;margin:0 auto; align: center;">
 </p>
 
 ## Usage
