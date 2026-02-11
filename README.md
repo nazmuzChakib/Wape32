@@ -58,7 +58,7 @@ Flash prebuilt binaries (no ESP‑IDF)
     --flash_mode dio --flash_freq 40m --flash_size detect \
     0x8000 build/partition_table/partition-table.bin \
     0x1000 build/bootloader/bootloader.bin \
-    0x10000 build/<project>.bin
+    0x10000 build/wape32.bin
   ```
   Adjust paths and filenames for the build artifacts present in the `build/` directory.
 
